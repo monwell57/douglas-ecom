@@ -16,7 +16,7 @@ const links = [
 function Navbar() {
   const pathname = usePathname();
   return (
-    <header className="mb-0 border-b bg-gray-100 text-gray-900">
+    <header className="mb-0 border-b bg-gray-200 text-gray-900">
       <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
         <Link href="/">
           <h1 className="text-4xl font-bold">
