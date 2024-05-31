@@ -52,8 +52,8 @@ const Blog = () => {
       setLoading(false);
     };
     fetchData();
-    console.log("Current Page:", page);
-    console.log("Total Pages:", totalPages);
+    // console.log("Current Page:", page);
+    // console.log("Total Pages:", totalPages);
   }, [page, totalPages]);
 
   const handlePageChange = (newPage) => {

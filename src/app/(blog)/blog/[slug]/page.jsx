@@ -43,7 +43,7 @@ async function getData(slug) {
       _createdAt
     } [0]`;
   const data = await client.fetch(query);
-  console.log("Fetched data:", JSON.stringify(data, null, 2));
+  // console.log("Fetched data:", JSON.stringify(data, null, 2));
   if (!data) {
     notFound();
   }
@@ -60,7 +60,7 @@ async function BlogArticle({ params }) {
   if (!data) {
     notFound();
   }
-  console.log(data);
+  // console.log(data);
   const formattedDate = formatDate(data._createdAt); // Format the date
 
   return (
