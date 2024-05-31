@@ -16,10 +16,10 @@ const links = [
 function Navbar() {
   const pathname = usePathname();
   return (
-    <header className="mb-0 border-b bg-gray-200 text-gray-900">
+    <header className="mb-0 border-b bg-gray-100 text-gray-900">
       <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
         <Link href="/">
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-2xl md:text-4xl font-bold">
             Mia's <span className="text-blue-500">Store</span>
           </h1>
         </Link>
@@ -50,6 +50,9 @@ function Navbar() {
             className="flex flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none"
           >
             <ShoppingBag />
+            <span className="hidden text-xs font-semibold text-gray-500 sm:block">
+              Cart
+            </span>
           </Button>
         </nav>
       </div>
