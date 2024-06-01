@@ -13,6 +13,7 @@ import apparel from './apparel'
 import phyicalMusic from './phyicalMusic'
 import product from './product'
 import category from './category'
+import heroImage from './heroImages'
 
 export const schemaTypes = [
   events,
@@ -30,4 +31,5 @@ export const schemaTypes = [
   phyicalMusic,
   product,
   category,
+  heroImage,
 ]
