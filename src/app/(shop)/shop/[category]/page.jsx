@@ -1,28 +1,21 @@
-import Link from "next/link";
-import { client } from "@/lib/sanity";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
+import React from "react";
+import { client } from "../../../../lib/sanity";
 
-export const revalidate = 60;
-
-async function getData() {
-  const query = `*[_type == "product"][0...4] | order(_createdAt desc) {
-        _id,
-          price,
-        name,
-          "slug": slug.current,
-          "categoryName": category->name,
-          "imageUrl": images[0].asset->url
-      }`;
-
+async function getData(category) {
+  const query = `*[_type == 'product' && category->name == '${category}'] {
+    _id,
+      "imageUrl": images[0].asset->url,
+      price,
+      name,
+      "slug": slug.current,
+      "categoryName": category->name
+  }`;
   const data = await client.fetch(query);
-
   return data;
 }
 
-export default async function Newest() {
-  const data = await getData();
-
+async function CategoryPage({ params }) {
+  const data = await getData(params.category);
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
@@ -74,3 +67,5 @@ export default async function Newest() {
     </div>
   );
 }
+
+export default CategoryPage;
