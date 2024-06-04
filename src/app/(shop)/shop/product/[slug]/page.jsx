@@ -5,6 +5,8 @@ import { Button } from "../../../../../components/ui/button";
 import { Star, Truck } from "lucide-react";
 import AddToBag from "../../components/AddToBag";
 
+export const revalidate = 60;
+
 async function getData(slug) {
   const query = `*[_type == "product" && slug.current == '${slug}'][0] {
     _id,
@@ -21,7 +23,7 @@ async function getData(slug) {
 }
 async function ProductPage({ params }) {
   const data = await getData(params.slug);
-  console.log(data.categoryName);
+  console.log(data.price_id);
   return (
     <div className="bg-white min-h-screen text-black py-6">
       <div className="mx-auto max-w-screen-xl px-4 md:px-0">
@@ -70,6 +72,7 @@ async function ProductPage({ params }) {
                 name={data.name}
                 price={data.price}
                 key={data._id}
+                price_id={data.price_id}
               />
               <Button className="bg-gray-200 text-gray-600 active:text-gray-100">
                 Checkout Now

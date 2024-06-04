@@ -5,8 +5,12 @@ import { Button } from "../../../../components/ui/button";
 import { useShoppingCart } from "use-shopping-cart";
 import { urlFor } from "../../../../lib/sanity";
 
-function AddToBag({ currency, description, image, name, price, price_id }) {
-  const { addItem, handleCartClick } = useShoppingCart();
+function CheckoutNow({ currency, description, image, name, price, price_id }) {
+  const { checkoutSingleItem } = useShoppingCart();
+
+  function buyNow(priceId) {
+    checkoutSingleItem(priceId);
+  }
   const product = {
     name: name,
     description: description,
@@ -18,7 +22,7 @@ function AddToBag({ currency, description, image, name, price, price_id }) {
   return (
     <Button
       onClick={() => {
-        addItem(product), handleCartClick();
+        buyNow(product.price_id);
       }}
       className="bg-blue-400 text-white"
     >
@@ -27,4 +31,4 @@ function AddToBag({ currency, description, image, name, price, price_id }) {
   );
 }
 
-export default AddToBag;
+export default CheckoutNow;
