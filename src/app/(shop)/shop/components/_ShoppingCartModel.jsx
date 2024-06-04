@@ -11,7 +11,8 @@ import {
 } from "../../../../components/ui/sheet";
 
 export function ShoppingCartModel() {
-  const { cartCount, shouldDisplayCart, handleCartClick } = useShoppingCart();
+  const { cartCount, shouldDisplayCart, cartDetails, handleCartClick } =
+    useShoppingCart();
   console.log(cartCount);
   return (
     <Sheet
@@ -29,7 +30,20 @@ export function ShoppingCartModel() {
               {cartCount === 0 ? (
                 <h1 className="py-6">You don't have any items</h1>
               ) : (
-                <h1 className="py-6">Hey, you have some items</h1>
+                <>
+                  {Object.values(cartDetails ?? {}).map((entry) => (
+                    <li key={entry.id} className="flex py-6">
+                      <div className="flex py-6 overflow-hidden rounded-md border border-gray-200">
+                        <Image
+                          src={entry.image}
+                          alt="Product Image"
+                          width={100}
+                          height={100}
+                        />
+                      </div>
+                    </li>
+                  ))}
+                </>
               )}
             </ul>
           </div>

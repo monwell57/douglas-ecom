@@ -1,10 +1,10 @@
-import Events from "@/components/events/Events";
-import Hero from "@/components/Hero";
+import Events from "../../components/events/Events";
+import Hero from "../..//components/Hero";
 import { client } from "../../lib/sanity";
-import { Player } from "@/components/Player";
-import Albums from "@/components/albums/Albums";
-import Blog from "@/components/blog/Blog";
-import Newsletter from "@/components/Newsletter";
+import { Player } from "../../components/Player";
+import Albums from "../../components/albums/Albums";
+import Blog from "../../components/blog/Blog";
+import Newsletter from "../../components/Newsletter";
 import { fetchLocations } from "../../lib/data";
 
 export const revalidate = 30;

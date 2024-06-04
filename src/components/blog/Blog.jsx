@@ -2,7 +2,7 @@ import Link from "next/link";
 import { client } from "../../lib/sanity";
 import SectionHeader from "../SectionHeader";
 import PostList from "./PostList";
-import { getPosts } from "@/app/(root)/page";
+import { getPosts } from "../../app/(root)/page";
 
 const Blog = async () => {
   const data = await getPosts();

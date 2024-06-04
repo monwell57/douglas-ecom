@@ -5,7 +5,7 @@ import { useState } from "react";
 import useSWR from "swr";
 import { AudioPlayer } from "react-audio-play";
 import { Swiper, SwiperSlide, SwiperSlider } from "swiper/react";
-import { fetchAlbum } from "@/app/(root)/page";
+import { fetchAlbum } from "../../app/(root)/page";
 import { EffectCoverflow, FreeMode, Navigation, Thumbs } from "swiper/modules";
 
 import "swiper/css";
@@ -13,7 +13,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { calcLength } from "framer-motion";
 import Image from "next/image";
-import { urlFor } from "@/lib/sanity";
+import { urlFor } from "../../lib/sanity";
 
 const AlbumSlider = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);

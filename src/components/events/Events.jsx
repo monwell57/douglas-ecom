@@ -1,7 +1,7 @@
 import React from "react";
 // import { getEvents } from "../../lib/data";
 import EventBox from "./EventBox";
-import { client } from "@/lib/sanity";
+import { client } from "../../lib/sanity";
 import SectionHeader from "../SectionHeader";
 
 export const revalidate = 30;

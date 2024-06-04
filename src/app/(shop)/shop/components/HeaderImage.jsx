@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { client, urlFor } from "@/lib/sanity";
+import { client, urlFor } from "../../lib/sanity";
 import Link from "next/link";
 
 export const revalidate = 60;

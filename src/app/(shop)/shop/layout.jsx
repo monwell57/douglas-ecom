@@ -1,12 +1,12 @@
 import Navbar from "./components/Navbar";
 import CartProviders from "./components/Providers";
-import ShoppingCartModel from "./components/ShoppingCartModel";
+import ShoppingCartModal from "./components/ShoppingCartModal";
 
 export default function Layout({ children }) {
   return (
     <main>
       <CartProviders>
-        <ShoppingCartModel />
+        <ShoppingCartModal />
         <Navbar />
         {children}
       </CartProviders>
