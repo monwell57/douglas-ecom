@@ -1,4 +1,4 @@
-import { NavContext } from "@/context/NavContext";
+import { NavContext } from "../context/NavContext";
 import React, { useContext } from "react";
 import { RiCloseLine } from "react-icons/ri";
 import Nav from "./Nav";
