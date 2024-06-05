@@ -30,13 +30,15 @@ async function CategoryPage({ params }) {
           {data.map((product) => (
             <div key={product._id} className="group relative">
               <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80">
-                <Image
-                  src={product.imageUrl}
-                  alt="Product image"
-                  className="w-full h-full object-cover object-center lg:h-full lg:w-full"
-                  width={300}
-                  height={300}
-                />
+                <Link href={`/shop/product/${product.slug}`}>
+                  <Image
+                    src={product.imageUrl}
+                    alt="Product image"
+                    className="w-full h-full object-cover object-center lg:h-full lg:w-full"
+                    width={300}
+                    height={300}
+                  />
+                </Link>
               </div>
 
               <div className="mt-4 flex justify-between">

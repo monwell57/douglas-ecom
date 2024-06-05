@@ -8,8 +8,8 @@ function CartProvider({ children }) {
       mode="payment"
       cartMode="client-only"
       stripe={process.env.NEXT_PUBLIC_STRIPE_KEY}
-      successUrl="http://localhost:3000/success"
-      cancelUrl="http://localhost:3000/error"
+      successUrl="http://localhost:3000/shop/stripe/success"
+      cancelUrl="http://localhost:3000/shop/stripe/error"
       currency="USD"
       billingAddressCollection={true}
       shouldPersist={true}

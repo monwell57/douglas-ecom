@@ -1,4 +1,5 @@
-import { Link } from "react-scroll";
+import { Link as NavLink } from "react-scroll";
+import Link from "next/link";
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 
@@ -33,7 +34,7 @@ const Nav = ({ containerStyles, linkStyles = "" }) => {
     <nav className={`${containerStyles}`}>
       {links.map((link, index) => {
         return (
-          <Link
+          <NavLink
             key={index}
             to={link.path}
             // className={`${linkStyles} cursor-pointer border-b-2 border-transparent`}
@@ -46,9 +47,16 @@ const Nav = ({ containerStyles, linkStyles = "" }) => {
             activeClass="active"
           >
             {link.name}
-          </Link>
+          </NavLink>
         );
       })}
+      <Link href="/shop">
+        <p
+          className={`${linkStyles} cursor-pointer border-b-2 border-transparent`}
+        >
+          Shop
+        </p>
+      </Link>
     </nav>
   );
 };
