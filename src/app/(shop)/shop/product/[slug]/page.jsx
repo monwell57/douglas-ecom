@@ -23,7 +23,7 @@ async function getData(slug) {
 }
 async function ProductPage({ params }) {
   const data = await getData(params.slug);
-  console.log(data.price_id);
+
   return (
     <div className="bg-white min-h-screen text-black py-6">
       <div className="mx-auto max-w-screen-xl px-4 md:px-0">
