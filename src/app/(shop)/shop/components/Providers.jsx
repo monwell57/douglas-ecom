@@ -8,8 +8,8 @@ function CartProvider({ children }) {
       mode="payment"
       cartMode="client-only"
       stripe={process.env.NEXT_PUBLIC_STRIPE_KEY}
-      successUrl={process.env.STRIPE_SUCCESS_URL}
-      cancelUrl={process.env.STRIPE_ERROR_URL}
+      successUrl={process.env.NEXT_PUBLIC_STRIPE_SUCCESS_URL}
+      cancelUrl={process.env.NEXT_PUBLIC_STRIPE_ERROR_URL}
       currency="USD"
       billingAddressCollection={true}
       shouldPersist={true}
