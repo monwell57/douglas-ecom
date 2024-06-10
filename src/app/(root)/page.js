@@ -6,17 +6,9 @@ import Albums from "../../components/albums/Albums";
 import Blog from "../../components/blog/Blog";
 import Newsletter from "../../components/Newsletter";
 import { fetchLocations } from "../../lib/data";
+import { fetchYear } from "../../lib/fetchYear"; // Import fetchYear function
 
 export const revalidate = 30;
-
-export async function fetchYear() {
-  const query = `*[_type == "year"]{
-    tourRange,
-    tourYear
-  } `;
-  const year = await client.fetch(query);
-  return year;
-}
 
 export async function fetchFeaturedTickets() {
   const query = `*[_type == "featuredEventTickets"]{
