@@ -8,8 +8,8 @@ function CartProvider({ children }) {
       mode="payment"
       cartMode="client-only"
       stripe={process.env.NEXT_PUBLIC_STRIPE_KEY}
-      successUrl="http://localhost:3000/shop/stripe/success"
-      cancelUrl="http://localhost:3000/shop/stripe/error"
+      successUrl="https://complete-artist-site-9ab82jvit-monwell57s-projects.vercel.app/shop/stripe/success"
+      cancelUrl="https://complete-artist-site-9ab82jvit-monwell57s-projects.vercel.app/shop/stripe/error"
       currency="USD"
       billingAddressCollection={true}
       shouldPersist={true}
