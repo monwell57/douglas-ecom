@@ -28,7 +28,9 @@
     "src/app/(shop)/shop/product/[slug]/page.jsx",
     "src/app/(shop)/shop/components/AddToBag.jsx",
     "src/app/(shop)/shop/components/CheckoutNow.jsx",
-    "src/app/(shop)/shop/components/ShoppingCartModal.jsx"
+    "src/app/(shop)/shop/components/ShoppingCartModal.jsx",
+    "src/app/(shop)/shop/stripe/success/page.jsx",
+    "src/app/(shop)/shop/stripe/error/page.jsx"
   ],
   "exclude": ["node_modules"]
 }
