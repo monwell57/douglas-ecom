@@ -74,7 +74,7 @@ async function ProductPage({ params }) {
                 key={data._id}
                 price_id={data.price_id}
               />
-              <Button className="bg-gray-200 text-gray-600 active:text-gray-100">
+              <Button className="bg-gray-200 text-gray-600 active:text-gray-100 hover:text-white">
                 Checkout Now
               </Button>
             </div>

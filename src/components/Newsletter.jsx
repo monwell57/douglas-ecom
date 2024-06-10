@@ -129,7 +129,7 @@ const Newsletter = () => {
                         <span className="text-[#ADB0B1]">
                           {successMessage.email_address}
                         </span>{" "}
-                        to our waitlist. We&apos;ll let you know when we launch!
+                        thank you for signing up to our newsletter!
                       </p>
                     ) : (
                       <p>
