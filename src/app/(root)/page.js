@@ -14,17 +14,17 @@ import { fetchSong } from "../../lib/fetchSong"; // Import fetchYear function
 
 export const revalidate = 30;
 
-export async function getPosts() {
-  const query = `*[_type == 'post'] | order(_createdAt desc) {
-      ...,
-          title, 
-          description,
-          "currentSlug": slug.current,
-          createdAt
-        }`;
-  const posts = await client.fetch(query);
-  return posts;
-}
+// export async function getPosts() {
+//   const query = `*[_type == 'post'] | order(_createdAt desc) {
+//       ...,
+//           title,
+//           description,
+//           "currentSlug": slug.current,
+//           createdAt
+//         }`;
+//   const posts = await client.fetch(query);
+//   return posts;
+// }
 
 export default async function Home() {
   const data = await fetchLocations();
