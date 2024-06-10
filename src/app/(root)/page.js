@@ -7,48 +7,21 @@ import Blog from "../../components/blog/Blog";
 import Newsletter from "../../components/Newsletter";
 import { fetchLocations } from "../../lib/data";
 import { fetchYear } from "../../lib/fetchYear"; // Import fetchYear function
+import { fetchAlbum } from "../../lib/fetchAlbum"; // Import fetchYear function
+import { fetchFeaturedTickets } from "../../lib/fetchFeaturedTickets"; // Import fetchYear function
+import { fetchSong } from "../../lib/fetchSong"; // Import fetchYear function
+// import { getPosts } from "../../lib/getPosts"; // Import fetchYear function
 
 export const revalidate = 30;
 
-export async function fetchFeaturedTickets() {
-  const query = `*[_type == "featuredEventTickets"]{
-    url
-  } `;
-  const ticketsFeature = await client.fetch(query);
-  return ticketsFeature;
-}
-export async function fetchSong() {
-  const query = ` *[_type == "featured"] {
-    artist,
-    featuresong,
-    "trackName": track[0].name,
-    "fileLocation": track[0].src.asset->url
-  }`;
-  const song = await client.fetch(query);
-  return song;
-}
-export async function fetchAlbum() {
-  const query = ` *[_type == "album"] {
-    _id,
-    img,
-    name,
-    tracks[] {
-      name,
-      "src": src.asset->url
-    }
-  }`;
-  const album = await client.fetch(query);
-  return album;
-}
-
 export async function getPosts() {
   const query = `*[_type == 'post'] | order(_createdAt desc) {
-    ...,
-        title, 
-        description,
-        "currentSlug": slug.current,
-        createdAt
-      }`;
+      ...,
+          title, 
+          description,
+          "currentSlug": slug.current,
+          createdAt
+        }`;
   const posts = await client.fetch(query);
   return posts;
 }

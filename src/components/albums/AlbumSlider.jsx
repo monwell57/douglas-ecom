@@ -5,7 +5,7 @@ import { useState } from "react";
 import useSWR from "swr";
 import { AudioPlayer } from "react-audio-play";
 import { Swiper, SwiperSlide, SwiperSlider } from "swiper/react";
-import { fetchAlbum } from "../../app/(root)/page";
+import { fetchAlbum } from "../../lib/fetchAlbum";
 import { EffectCoverflow, FreeMode, Navigation, Thumbs } from "swiper/modules";
 
 import "swiper/css";
