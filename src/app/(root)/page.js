@@ -17,6 +17,7 @@ export async function fetchYear() {
   const year = await client.fetch(query);
   return year;
 }
+
 export async function fetchFeaturedTickets() {
   const query = `*[_type == "featuredEventTickets"]{
     url
