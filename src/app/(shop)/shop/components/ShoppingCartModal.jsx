@@ -21,7 +21,7 @@ export default function ShoppingCartModal() {
     redirectToCheckout,
   } = useShoppingCart();
 
-  async function handleCheckoutClick(event: any) {
+  async function handleCheckoutClick(event) {
     event.preventDefault();
     try {
       const result = await redirectToCheckout();
@@ -50,7 +50,7 @@ export default function ShoppingCartModal() {
                     <li key={entry.id} className="flex py-6">
                       <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                         <Image
-                          src={entry.image as string}
+                          src={entry.image}
                           alt="Product image"
                           width={100}
                           height={100}
