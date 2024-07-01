@@ -3,10 +3,13 @@ import Header from "./components/Header";
 import Banner from "./components/Banner";
 import Card from "./components/Card";
 import Footer from "./components/Footer";
+import { fetchProducts } from "../../../lib/getProducts";
 
 export const revalidate = 30;
 
-const ShopPage = () => {
+const ShopPage = async () => {
+  const products = await fetchProducts();
+  console.log("[ShopPage]", products);
   return (
     <div className="bg-white pb-6 sm:pb-8 lg:pb-12 min-h-screen  text-gray-900">
       <Header />
@@ -29,10 +32,9 @@ const ShopPage = () => {
       </div>
       <div className="p-10 flex">
         <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {products?.map((product) => (
+            <Card key={product._id} product={product} />
+          ))}
         </div>
       </div>
       <Footer />

@@ -1,30 +1,128 @@
 import React from "react";
 
-function Details() {
+function Details({ product }) {
   return (
     <div className="max-w-7xl mx-auto mt-20">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Left Column */}
         <div className="shadow-md relative h-96 overflow-hidden aspect-ratio-1">
-          <img src="/painting.jpg" alt="pic" layout="fill" />
+          <img src={product.image} alt="pic" layout="fill" />
         </div>
         {/* Right Column */}
         <div className="flex flex-col p-6 justify-between">
           <h1 className="text-3xl font-semibold text-[#5b20b6]">
-            IPhone 15 Pro Max
+            {product.name}
           </h1>
-          <p className="text-lg text-gray-500 mt-4">IPhone Pro Best Version</p>
+          <p className="text-lg text-gray-500 mt-4">{product.description}</p>
           {/* Color Selection */}
           <div className="flex mt-6 space-x-3">
-            <div className="h-8 w-8 rounded-full bg-blue-500 cursor-pointer"></div>
-            <div className="h-8 w-8 rounded-full bg-blue-500 cursor-pointer"></div>
-            <div className="h-8 w-8 rounded-full bg-blue-500 cursor-pointer"></div>
+            {product.colors?.map((color) => {
+              switch (color.toLowerCase()) {
+                case "grey":
+                  return (
+                    <div
+                      className="h-8 w-8 rounded-full bg-gray-500 cursor-pointer"
+                      key={color}
+                    ></div>
+                  );
+                case "blue":
+                  return (
+                    <div
+                      className="h-8 w-8 rounded-full bg-blue-500 cursor-pointer"
+                      key={color}
+                    ></div>
+                  );
+                case "black":
+                  return (
+                    <div
+                      className="h-8 w-8 rounded-full bg-black cursor-pointer"
+                      key={color}
+                    ></div>
+                  );
+                case "red":
+                  return (
+                    <div
+                      className="h-8 w-8 rounded-full bg-red-500 cursor-pointer"
+                      key={color}
+                    ></div>
+                  );
+                case "green":
+                  return (
+                    <div
+                      className="h-8 w-8 rounded-full bg-green-500 cursor-pointer"
+                      key={color}
+                    ></div>
+                  );
+                case "yellow":
+                  return (
+                    <div
+                      className="h-8 w-8 rounded-full bg-yellow-500 cursor-pointer"
+                      key={color}
+                    ></div>
+                  );
+                case "purple":
+                  return (
+                    <div
+                      className="h-8 w-8 rounded-full bg-purple-500 cursor-pointer"
+                      key={color}
+                    ></div>
+                  );
+                case "orange":
+                  return (
+                    <div
+                      className="h-8 w-8 rounded-full bg-orange-500 cursor-pointer"
+                      key={color}
+                    ></div>
+                  );
+                case "pink":
+                  return (
+                    <div
+                      className="h-8 w-8 rounded-full bg-pink-500 cursor-pointer"
+                      key={color}
+                    ></div>
+                  );
+                case "brown":
+                  return (
+                    <div
+                      className="h-8 w-8 rounded-full bg-brown-500 cursor-pointer"
+                      key={color}
+                    ></div>
+                  );
+                case "white":
+                  return (
+                    <div
+                      className="h-8 w-8 rounded-full border border-black cursor-pointer"
+                      key={color}
+                    ></div>
+                  );
+                case "cyan":
+                  return (
+                    <div
+                      className="h-8 w-8 rounded-full bg-cyan-500 cursor-pointer"
+                      key={color}
+                    ></div>
+                  );
+                case "magenta":
+                  return (
+                    <div
+                      className="h-8 w-8 rounded-full bg-magenta-500 cursor-pointer"
+                      key={color}
+                    ></div>
+                  );
+                case "lime":
+                  return;
+              }
+            })}
           </div>
           {/* Price */}
           <div className="flex items-center mt-6">
-            <span className="text-3xl font-semibold text-[#5b20b6]">$999</span>
+            <span className="text-3xl font-semibold text-[#5b20b6]">
+              ${product.price}
+            </span>
+
             <span className="text-lg text-gray-500 line-through ml-4 ">
-              $1299
+              {" "}
+              ${(product.price * 1.5).toFixed(2)}
             </span>
           </div>
           {/* Qty */}

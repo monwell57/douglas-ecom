@@ -8,6 +8,8 @@ import featuredSong from './featuredSong'
 import featuredShowTickets from './featuredShowTickets'
 // import videoBlogPost from './muxVids'
 import author from './author'
+import order from './order-schema'
+import product from './product-schema'
 // import accessories from './accessories'
 // import apparel from './apparel'
 // import phyicalMusic from './phyicalMusic'
@@ -25,4 +27,6 @@ export const schemaTypes = [
   featuredSong,
   featuredShowTickets,
   author,
+  order,
+  product,
 ]

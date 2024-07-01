@@ -4,7 +4,6 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 import {media} from 'sanity-plugin-media'
 import StudioNavbar from '../src/components/StudioNavbar'
-import {muxInput} from 'sanity-plugin-mux-input'
 
 export default defineConfig({
   name: 'default',
@@ -13,7 +12,7 @@ export default defineConfig({
   projectId: '4hglk3si',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool(), media(), muxInput()],
+  plugins: [structureTool(), visionTool(), media()],
 
   schema: {
     types: schemaTypes,

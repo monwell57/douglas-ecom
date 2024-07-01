@@ -1,3 +1,10 @@
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 import "./globals.css";
 import { Alex_Brush, Montserrat } from "next/font/google";
 import Header from "../components/Header";
@@ -23,15 +30,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <NavContextProvider>
-      <html lang="en" suppressHydrationWarning={true}>
-        <body
-          suppressHydrationWarning={true}
-          className={`${alexBrush.variable} ${montserrat.variable} overflow-x-hidden relative`}
-        >
-          {children}
-        </body>
-      </html>
-    </NavContextProvider>
+    <ClerkProvider>
+      <NavContextProvider>
+        <html lang="en" suppressHydrationWarning={true}>
+          <body
+            suppressHydrationWarning={true}
+            className={`${alexBrush.variable} ${montserrat.variable} overflow-x-hidden relative`}
+          >
+            {children}
+          </body>
+        </html>
+      </NavContextProvider>
+    </ClerkProvider>
   );
 }

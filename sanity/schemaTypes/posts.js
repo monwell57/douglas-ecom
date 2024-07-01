@@ -59,28 +59,28 @@ export default {
           type: 'image',
           fields: [{type: 'text', name: 'alt', title: 'Alt'}],
         },
-        {
-          type: 'object',
-          name: 'videoEmbed',
-          title: 'Video Embed',
-          fields: [
-            {
-              title: 'Video',
-              name: 'video',
-              type: 'mux.video',
-            },
-            {
-              title: 'Caption',
-              name: 'caption',
-              type: 'string',
-            },
-            {
-              title: 'Description',
-              name: 'description',
-              type: 'text',
-            },
-          ],
-        },
+        // {
+        //   type: 'object',
+        //   name: 'videoEmbed',
+        //   title: 'Video Embed',
+        //   fields: [
+        //     {
+        //       title: 'Video',
+        //       name: 'video',
+        //       type: 'mux.video',
+        //     },
+        //     {
+        //       title: 'Caption',
+        //       name: 'caption',
+        //       type: 'string',
+        //     },
+        //     {
+        //       title: 'Description',
+        //       name: 'description',
+        //       type: 'text',
+        //     },
+        //   ],
+        // },
       ],
     },
   ],
