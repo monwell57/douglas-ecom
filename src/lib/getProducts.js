@@ -26,6 +26,7 @@ export async function getProductBySlug(slug) {
       'image': image.asset->url,
       'extraImages':extraImages[].asset->url,
       price,
+      sizes,
       description,
       colors, 
       'createdAt':createdAt

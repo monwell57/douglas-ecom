@@ -114,6 +114,19 @@ function Details({ product }) {
               }
             })}
           </div>
+          {/* Size Selection */}
+          {product.sizes && product.sizes.length > 0 && (
+            <div className="mt-6">
+              <label className="block text-gray-700">Size</label>
+              <select className="mt-2 p-2 border border-gray-300 rounded-md">
+                {product.sizes.map((size) => (
+                  <option key={size} value={size}>
+                    {size}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
           {/* Price */}
           <div className="flex items-center mt-6">
             <span className="text-3xl font-semibold text-[#5b20b6]">
