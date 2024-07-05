@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-function layout({children}) {
+function layout({ children }) {
   return (
-    <div className='flex items-center justify-center h-screen max-w-full'>{children}</div>
-  )
+    <div className="flex items-center justify-center h-screen max-w-full bg-white">
+      {children}
+    </div>
+  );
 }
 
-export default layout
+export default layout;
