@@ -11,6 +11,7 @@ import author from './author'
 import order from './order-schema'
 import product from './product-schema'
 import comment from './comment-schema'
+import contact from './contact-schema'
 // import accessories from './accessories'
 // import apparel from './apparel'
 // import phyicalMusic from './phyicalMusic'
@@ -31,4 +32,5 @@ export const schemaTypes = [
   order,
   product,
   comment,
+  contact,
 ]
