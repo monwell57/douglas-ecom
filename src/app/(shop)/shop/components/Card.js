@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React from "react";
 
+export const revalidate = 30;
+
 function Card({ product }) {
   return (
     <Link href={`/shop/details/${product.slug}`}>

@@ -9,6 +9,7 @@ const client = createClient({
   useCdn: true,
 })
 
+export const revalidate = 30
 // Function to get orders by email and sort by the latest
 export async function getOrdersByEmail(email) {
   try {

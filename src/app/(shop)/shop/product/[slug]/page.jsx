@@ -5,7 +5,7 @@ import { Button } from "../../../../../components/ui/button";
 import { Star, Truck } from "lucide-react";
 import AddToBag from "../../components/AddToBag";
 
-export const revalidate = 60;
+export const revalidate = 30;
 
 async function getData(slug) {
   const query = `*[_type == "product" && slug.current == '${slug}'][0] {

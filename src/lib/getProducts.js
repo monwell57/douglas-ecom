@@ -1,6 +1,8 @@
 import { client } from "./sanity";
 import groq from "groq";
 
+export const revalidate = 30;
+
 export async function fetchProducts() {
   const query = groq`*[_type == "product"] {
     _id,

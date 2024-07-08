@@ -40,9 +40,8 @@ export default async function Order() {
                 key={order._id}
                 className="hover:bg-gray-50 text-center border-b border-gray-300 text-[#5B20B6]"
               >
-                <td className="py-2 px-4">
-                  <td className="py-2 px-4">{formattedDate}</td>
-                </td>
+                <td className="py-2 px-4">{formattedDate}</td>
+
                 <td className="py-2 px-4 flex items-center">{order.name}</td>
                 <td className="py-2 px-4">{order.qty}</td>
                 <td className="py-2 px-4">${order.price}</td>
