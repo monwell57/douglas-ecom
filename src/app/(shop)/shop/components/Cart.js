@@ -27,6 +27,13 @@ function Cart() {
   };
 
   const onSubmit = async () => {
+    if (!isLoaded) return; // Wait for Clerk to load
+    if (!isSignedIn) {
+      // Redirect to sign-in or sign-up page
+      router.push("/sign-in");
+      return;
+    }
+
     const cardElement = elements?.getElement("card");
     setLoading(true);
 
@@ -40,11 +47,9 @@ function Cart() {
       const res = await stripe?.confirmCardPayment(data?.data?.intent, {
         payment_method: { card: cardElement },
       });
-      //console.log(res.paymentIntent.status);
       const status = res?.paymentIntent?.status;
       if (status === "succeeded") {
         setLoading(false);
-        // toast.success("Payment Successful");
         const email = user?.emailAddresses[0]?.emailAddress;
 
         if (email) {
@@ -57,7 +62,6 @@ function Cart() {
     } catch (error) {
       setLoading(false);
       console.log(error);
-      // toast.error("Payment Failed");
     }
   };
 
@@ -105,7 +109,6 @@ function Cart() {
           ))}
         </tbody>
       </table>
-      {/* Total Section */}
       <div className="mt-4 text-[#5B20B6] ml-auto">
         <p className="text-lg font-semibold text-right mr-4">
           Total: ${cartTotal.toFixed(2)}
