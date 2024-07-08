@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run lint && npm run build && npm prune --production"
   },
   "dependencies": {
     "@clerk/nextjs": "^5.1.6",
