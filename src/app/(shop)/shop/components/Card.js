@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 
 export const revalidate = 30;
@@ -8,7 +9,13 @@ function Card({ product }) {
     <Link href={`/shop/details/${product.slug}`}>
       <div className="relative shadow-md max-w-sm cursor-pointer">
         <div className="relative h-72 overflow-hidden aspect-ratio-1 hover:scale-105 transition-transform duration-300">
-          <img src={product.image} layout="fill" alt="Paint" />
+          <Image 
+            src={product.image} 
+            
+            alt="Paint"
+            width={288} // width of the image based on the aspect ratio (assuming h-72 is 288px)
+            height={288} // height of the image based on the aspect ratio (assuming h-72 is 288px)
+          />
         </div>
 
         <div className="p-4 space-y-2 ">
